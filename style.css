@@ -1,0 +1,153 @@
+/* Сброс базовых отступов */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* отключаем прокрутку */
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Основной контейнер — весь экран */
+.main-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  text-align: center;
+  padding: 2vw;
+  overflow: hidden; /* чтобы не выходило за границы */
+}
+
+.main-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("img/background.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(1.5px); /* степень размытия — можно увеличить */
+  transform: scale(1.05); /* убирает чёрные края после размытия */
+  z-index: 0;
+}
+
+/* Контент поверх размытого фона */
+.text-section,
+.cards-grid {
+  position: relative;
+  z-index: 1;
+}
+
+/* Текстовая часть */
+.text-section {
+  margin-bottom: 10vh;
+}
+
+.main-title {
+  font-size: 2.8vw;
+  /* text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); */
+  text-shadow: -1px -1px 0 #DB579D,
+  1px -1px 0 #DB579D,
+  -1px 1px 0 #DB579D,
+  1px 1px 0 #DB579D;
+}
+
+.sub-title {
+  font-size: 1.5vw;
+  font-weight: 400;
+  margin-top: 1vh;
+  /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); */
+  text-shadow: -1px -1px 0 #DB579D,
+  1px -1px 0 #DB579D,
+  -1px 1px 0 #DB579D,
+  1px 1px 0 #DB579D;
+}
+
+/* Сетка карточек */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2vw;
+  width: 70%;
+  height: 55%;
+}
+
+/* Карточка */
+.card {
+  background-color: transparent; /* фон полностью прозрачный */
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); */
+}
+
+/* Изображение внутри карточки */
+.card img {
+  width: 80%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1vh;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+/* Текст ссылки */
+.card-title {
+  color: #fff;
+  font-size: 1.2vw;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  text-shadow: -1px -1px 0 #8C25C9,
+  1px -1px 0 #8C25C9,
+  -1px 1px 0 #8C25C9,
+  1px 1px 0 #8C25C9;
+}
+
+/* .card-title:hover {
+  color: #ffd700;
+} */
+
+/* Адаптивность под разные мониторы */
+@media (max-width: 1300px) {
+  .main-title {
+    font-size: 3vw;
+  }
+
+  .sub-title {
+    font-size: 1.8vw;
+  }
+
+  .card-title {
+    font-size: 1.5vw;
+  }
+}
+
+@media (min-width: 1800px) {
+  .main-title {
+    font-size: 2.2vw;
+  }
+
+  .sub-title {
+    font-size: 1.2vw;
+  }
+}
