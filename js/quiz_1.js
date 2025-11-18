@@ -21,7 +21,7 @@ function shuffle(arr) {
 }
 
 function pickRandomThree() {
-  const shuffled = shuffle(allQuestions_1); // Рядок по якій відрізняються вікторини
+  const shuffled = shuffle(allQuestions_1); // Рядок за яким відрізняються блоки
   return shuffled.slice(0, 10);
 }
 
@@ -182,4 +182,5 @@ function initQuiz() {
 // старт
 
 initQuiz();
+
 
