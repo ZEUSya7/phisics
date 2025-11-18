@@ -1,4 +1,5 @@
 // const allQuestions_1
+// Створюємо список в якому міститися питання з теми
 const allQuestions_1 = [
     {
         question: "Що називають механічним рухом?",
@@ -520,4 +521,5 @@ const allQuestions_1 = [
         ],
         correct: 2
     }
+
 ];
