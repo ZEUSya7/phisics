@@ -22,7 +22,7 @@ function shuffle(arr) {
 
 function pickRandomThree() {
   const shuffled = shuffle(allQuestions_1);
-  return shuffled.slice(0, 20);
+  return shuffled.slice(0, 10);
 }
 
 // Плавное изменение шрифта: устанавливаем transition в JS (падают/возвращаются значения)
@@ -180,4 +180,5 @@ function initQuiz() {
 }
 
 // старт
+
 initQuiz();
